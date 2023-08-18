@@ -1,2 +1,2 @@
 # FashionMNIST
-My exploration with the FashionMNIST classification using PyTorch and TorchMetrics
+Results of my playing with the FashionMNIST image classification dataset using PyTorch and TorchMetrics
