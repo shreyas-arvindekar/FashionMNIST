@@ -1,4 +1,3 @@
-from numpy import dtype
 import torch
 import torch.optim
 import torch.utils.data
@@ -24,7 +23,7 @@ val_dataloader = torch.utils.data.DataLoader(val_data, batch_size=32, shuffle=Fa
 
 EPOCHS = 10
 LR = 0.1
-DEVICE = "mps"
+DEVICE = "cpu"
 mdl = FashionMNISTModelV0().to(DEVICE)
 loss_fn = torch.nn.CrossEntropyLoss().to(DEVICE)
 optimizer = torch.optim.SGD(params=mdl.parameters(), lr=LR)

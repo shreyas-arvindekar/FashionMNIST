@@ -8,14 +8,15 @@ class FashionMNISTModelV0(nn.Module):
         self.convstack = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=16, kernel_size=4),
             nn.ReLU(),
+            nn.MaxPool2d(kernel_size=3),
+            nn.Conv2d(in_channels=16, out_channels=64, kernel_size=3),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=3),
             nn.Flatten(start_dim=1),
         )
+
         self.linstack = nn.Sequential(
-            nn.Linear(in_features=10000, out_features=1024),
-            nn.ReLU(),
-            nn.Linear(in_features=1024, out_features=64),
-            nn.ReLU(),
-            nn.Linear(in_features=64, out_features=10),
+            nn.Linear(in_features=256, out_features=10),
             nn.Softmax(dim=1),
         )
 
